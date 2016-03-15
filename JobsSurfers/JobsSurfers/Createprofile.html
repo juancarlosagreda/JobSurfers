@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<HTML lang="en" dir="LTR">
+<head> 
+<title>Jobs Surfers | Create Profile </title>
+
+  <!--AÑADE TODO ESTO EN TU HEAD-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" >
+  <script src="scripts.js"></script>
+
+  <center><h1>Create your profile!</h1></center>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+<!--AÑADE TODO ESTO EN EL INICIO DE TU BODY-->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <ul class="nav navbar-nav">
+              <li><a onclick="goBack()" >< BACK</a></li>
+            </ul>
+            <a class="navbar-brand" href="#"><img id="logo" src="logo.jpg" alt="Jobs Surfers Logo" title="Jobs Surfers Logo" /></a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="MakeComment.html">Dashboard</a></li>
+                  <li><a href="#">Connection's suggestion</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Validate aptitudes</a></li>
+                  <li><a href="#">Ask for recommendations</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="searchJob">Apply for a job</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Post a job</a></li>
+                  <li><a href="#">Manage jobs</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="ButtonViewProfile.html">View profile</a></li>
+                  <li><a href="Postfoto.html">Create profile</a></li>
+                  <li><a href="#">Add Aptitudes</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="MyGroups.html">Groups</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Sing out</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+<center>
+<div style="position: relative; top: 50px; margin-left: 400px;">
+    <ul id="bat">
+      <li><a id="burru">Create User </a></li>
+      <li> <a id="burru">Post a Photo </a> </li>
+      <li><a id="guapo">Create your profile </a></li>
+    </ul>
+</div>
+</center>
+<center>  
+<div  >
+  <fieldset style="min-width: 84px; padding: 14px; margin: 150px; border: 10px;">
+  <legend><h3> About me.. </h3></legend>
+  <FORM action="check" method="GET" id="check">
+  	<table>
+  		<tbody>
+  			<tr row span=3>
+  				<td align="left"><input class="jordi" type="text" size="20" Placeholder="User Name" name="username" id="username-input" onclick="javascript: clean(this);">
+          </td>
+        <tr>
+          <td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="First Name *" name="firstname" id="firstname-input" onclick="javascript: clean(this);">
+          </td>
+  				<td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="Last Name *" name="lastname" id="lastname-input" onclick="javascript: clean(this);" ></td>
+  			</tr>
+  			<tr>
+  				<td align ="left"><INPUT class="jordi" type="text" size="20" name="email" Placeholder="Email *" onclick="javascript: clean(this);" ></td>	
+  				<td align ="left"><SELECT name="gender"> 
+  					<OPTION value="0">Selection</OPTION>
+  					<OPTION value="1">Male</OPTION>
+  					<OPTION value="2">Female</OPTION>
+  				</SELECT>
+  				</td>
+  			</tr>
+  			<tr>
+  				<td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="Mobile Number" name="mobilenumber" onclick="javascript: clean(this);" ></td>
+          <td align="left"><INPUT class="jordi" type="date" size="20" Placeholder="Birthday" name="birthday" onclick="javascript: clean(this);">
+          </td>
+  			</tr>
+        <tr> 
+        </tr>
+  		</tbody>
+  	</table>
+  	<center><h6> *Required field </h6></center>
+  	<button type="button" name="create" id="create" onclick="al()" >create</button>
+  	<input type="reset" name="reset" value="reset" id="reset">
+  </FORM>
+  </fieldset>
+</div>
+</center>
+
+</body>
+</center>
+</html>

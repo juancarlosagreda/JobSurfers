@@ -32,6 +32,7 @@ public class login extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException  {
+		HttpSession session = req.getSession(true);
 		String tipo = req.getParameter("tipo");
 		String userlogin = req.getParameter("userlogin");
 		String password = req.getParameter("password");
@@ -43,53 +44,54 @@ public class login extends HttpServlet {
 		String pass;
 		boolean correct = false;
 		
-		if (userlogin == "" || userlogin == null){
-			html += "Sorry, you haven't enetered any user.";
+	
+		if (tipo.equals("user")){
+			sql = "SELECT Username, Password FROM UserReg WHERE Username ='"+ userlogin +"'";
+			try{
+				statementSelect=connection.createStatement();
+				result = statementSelect.executeQuery(sql);
+				while(result.next()) {
+					pass = result.getString("Password");
+					if (pass.equals(password)){
+						html += "<div id=\"left-sidebar\"></div><div id=\"page\"><div id=\"make-post-form\"><textarea class=\"post-textarea\" id=\"post-text\" placeholder=\"What are you thinking about?\" maxlength=\"140\" onkeydown=\"count()\"></textarea><input type=\"text\" id=\"characters\" disabled=\"true\" value=\"140\"><button type=\"button\" class=\"btn btn-primary\" id=\"post-btn\">Post</button></div>";
+						html += "<div id=\"dashboard\"></div></div><div id=\"right-sidebar\"><h4>Connection Suggestions</h4><div class=\"connection-suggestion-placeholder\"></div><h4>Companies to Follow</h4><div class=\"companies-to-follow-placeholder\"></div></div>";
+						correct = true;
+						session.setAttribute("user", userlogin);
+					}
+				}
+				result.close();
+				statementSelect.close();
+				if (correct == false){
+					html += "Dear user "+userlogin+", your password is incorrect.";
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				System.out.println("Exception in login: " + e);
+			}
+
 		}else{
-			if (tipo=="user"){
-				sql = "SELECT Username, Password FROM UserReg WHERE Username ='"+ userlogin +"'";
-				try{
-					statementSelect=connection.createStatement();
-					result = statementSelect.executeQuery(sql);
-					while(result.next()) {
-						pass = result.getString("Password");
-						if (pass==password){
-							html += "Welcome back user "+userlogin+".";
-							correct = true;
-						}
+
+			sql = "SELECT CompanyName, Password FROM CompanyReg WHERE CompanyName ='"+ userlogin +"'";
+			try{
+				statementSelect=connection.createStatement();
+				result = statementSelect.executeQuery(sql);
+				while(result.next()) {
+					pass = result.getString("Password");
+					if (pass==password){
+						html += "Welcome back company "+userlogin+".";
+						correct = true;
 					}
-					result.close();
-					statementSelect.close();
-					if (correct == false){
-						html += "Dear user "+userlogin+", your password is incorrect.";
-					}
-				}catch(SQLException e) {
-					e.printStackTrace();
-					System.out.println("Exception in login: " + e);
 				}
-			}else{
-				sql = "SELECT CompanyName, Password FROM CompanyReg WHERE CompanyName ='"+ userlogin +"'";
-				try{
-					statementSelect=connection.createStatement();
-					result = statementSelect.executeQuery(sql);
-					while(result.next()) {
-						pass = result.getString("Password");
-						if (pass==password){
-							html += "Welcome back company "+userlogin+".";
-							correct = true;
-						}
-					}
-					result.close();
-					statementSelect.close();
-					if (correct == false){
-						html += "Dear company "+userlogin+", your password is incorrect.";
-					}
-				}catch(SQLException e) {
-					e.printStackTrace();
-					System.out.println("Exception in login: " + e);
+				result.close();
+				statementSelect.close();
+				if (correct == false){
+					html += "Dear company "+userlogin+", your password is incorrect.";
 				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				System.out.println("Exception in login: " + e);
 			}
 		}
-		ResponseManager.output(res, html);
+		ResponseManager.outputUWOP(res, userlogin, html);
 	}
 }

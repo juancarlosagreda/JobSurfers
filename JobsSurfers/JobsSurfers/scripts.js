@@ -78,7 +78,13 @@ function FindGroups() {
   xhttp.open("GET", "FindGroups", true);
   xhttp.send();
 }
-
+function count(){ 
+       document.getElementById("characters").value=140-document.getElementById("post-text").value.length
+       if (document.getElementById("characters").value <= 5) {
+        var zero="0"
+            document.getElementById("characters").style.color = 'red';
+       } else { document.getElementById("characters").style.color = 'black';}
+}  
 /*Maialen*/
 function showComment(element) {
 	var comment = $(element).prevAll('.com:first').val();

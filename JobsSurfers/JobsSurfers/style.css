@@ -153,18 +153,49 @@ h3 {
   color: #000168;
   padding: 10px;
 }
+h4{
+  color: #000168;
+  padding: 10px;
+  border-bottom: 1px solid #000168;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
 #create-group-button {
   display: inline;
   position: absolute;
   margin-left: 40%;
 }
-#page {
+#left-sidebar {
+  margin-top: 60px;
+  margin-left: 1%;
   background-color: white;
-  margin: auto;
-  margin-top: 50px;
-  padding: 10px;
-  width: 80%;
-  height: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 20%;
+  min-height: 300px;
+  float: left;
+  margin-right: 2%;
+}
+
+#page {
+  width: 53%;
+  min-height: 1000px;
+  margin:auto;
+  float: left;
+  margin-top: 60px;
+}
+#right-sidebar {
+  margin-top: 60px;
+  margin-right: 1%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 20%;
+  min-height: 300px;
+  float: left;
+  margin-left: 2%;
 }
 input[type="checkbox"]{
   width: 15px;
@@ -287,4 +318,30 @@ div.img {
     margin: 5px;
     float: left;
     border: 5px solid #00FFFF;
+}
+.connection-suggestion-placeholder {
+  min-height: 100px;
+}
+.companies-to-follow-placeholder {
+  min-height: 100px;
+}
+
+#make-post-form {
+  border-radius: 4px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 2%;
+}
+
+#dashboard {
+  border-radius: 4px;
+  background-color: white;
+  min-height: 900px;
+}
+
+#post-btn {
+  margin-left: 90%;
+}
+body{
+  background-color: rgba(179, 179, 179, 0.84);
 }

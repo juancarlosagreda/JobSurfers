@@ -21,9 +21,7 @@ public class CreateGroup extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException  {
 		
-		HttpSession session = req.getSession(true); // on the complete app the boolean changes to false
-		session.setAttribute("user", "JuanFran"); 
-		// the previous two lines simulate that you're connected as the user "JuanFran"
+		HttpSession session = req.getSession(false); // on the complete app the boolean changes to false
 		
 		// requesting the parameters from creation form
         String groupname = req.getParameter("GroupName");

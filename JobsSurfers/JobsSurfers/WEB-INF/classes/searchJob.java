@@ -34,7 +34,7 @@ public class searchJob extends HttpServlet {
         
         //Usar sesión iniciada
         boolean sessionBool = false;
-        //HttpSession session = req.getSession(false);
+        HttpSession session = req.getSession(false);
         if (session != null) {
             sessionBool = true;
         }
@@ -53,7 +53,7 @@ public class searchJob extends HttpServlet {
 
         try {
             Statement stmt=conn.createStatement();
-            ResultSet resultAll = stmt.executeQuery("SELECT code, sector, company, position FROM jobslist");
+            ResultSet resultAll = stmt.executeQuery("SELECT jobslist.code, jobslist.sector, CompanyReg.CompanyName As company, jobslist.position FROM jobslist, CompanyReg WHERE jobslist.company = CompanyReg.CompanyID");
             html += "<div class='container' id='showAll'><h3>All the job offers</h3>";
             html += "<form method=GET action='apply'>";
             html += "<table border='1' class='table table-hover table-condensed'>";          

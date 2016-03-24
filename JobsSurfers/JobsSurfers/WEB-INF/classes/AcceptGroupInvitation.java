@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 @SuppressWarnings("serial")
-public class MakePost extends HttpServlet {
+public class AcceptGroupInvitation extends HttpServlet {
     Connection connection;
         public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -21,21 +21,21 @@ public class MakePost extends HttpServlet {
 
      public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         HttpSession session = req.getSession(false);
-        String user = (String)session.getAttribute("user");
-        String post = req.getParameter("post-text");
+        String invitedPerson = (String)session.getAttribute("user");
+        String groupid = req.getParameter("groupID");
+        String groupName = req.getParameter("groupName");
 
-        String sql = "INSERT INTO Posts (Username, Post) VALUES (";
-        sql +=  "'" + user + "'";
-        sql +=  ", '" + post + "')"; 
+        String sql = "INSERT INTO GroupMembers (GroupID, Members) VALUES (";
+        sql +=  "'" + groupid + "'";
+        sql +=  ", '" + invitedPerson + "')"; 
         System.out.println("Insert sql: " + sql);
         
         try {
-            System.out.println("Statement: " + (connection != null));
             Statement statementInsert=connection.createStatement();
             int num = statementInsert.executeUpdate(sql);
         } catch(SQLException e){
             e.printStackTrace();
         }
-        ResponseManager.AjaxOutput(res, "{ \"user\": \""+user+"\", \"post\": \""+post+"\" }");
+        ResponseManager.AjaxOutput(res, groupName);
      }
 }

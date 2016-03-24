@@ -84,7 +84,56 @@ function count(){
         var zero="0"
             document.getElementById("characters").style.color = 'red';
        } else { document.getElementById("characters").style.color = 'black';}
-}  
+} 
+
+function MakePost() {    
+    var data ="";
+    var post = document.getElementById("post-text").value;
+
+    var request = new XMLHttpRequest();
+    request.open('GET', 'MakePost?post-text='+post, true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        resp = request.responseText;
+        data = JSON.parse(resp);
+        document.getElementById("dashboard").innerHTML = "<li><div class=\"post-author\"><a href=\"#\">"+data.user+"</a></div><div class=\"post-content\"><input type=\"text\" disabled=\"true\" class=\"post\" value=\""+data.post+"\"></div></li>" + document.getElementById("dashboard").innerHTML;
+      } 
+    };
+
+    request.send();
+}
+$(document).ready(function() {
+    var data ="";
+    var html = "";
+    var html2 = "";
+    var request = new XMLHttpRequest();
+    request.open('GET', 'GetSuggestions', true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        resp = request.responseText;
+        data = JSON.parse(resp);
+        html += "<ul class=\"SuggestionList\">";
+        for (var i=0; i<data.Friends.length; i++){
+            html += "<li><a href=\"#\">"+ data.Friends[i] + "</a></li>";
+        }
+        html += "</ul>";
+        document.getElementById("connection-suggestion-placeholder").innerHTML = html;
+
+        html2 += "<ul class=\"SuggestionList\">";
+        for (var i=0; i<data.Companies.length; i++){
+            html2 += "<li><a href=\"#\">"+ data.Companies[i] + "</a></li>";
+        }
+        html2 += "</ul>";
+        document.getElementById("companies-to-follow-placeholder").innerHTML = html2;
+
+      } 
+    };
+
+    request.send();
+});
+
 /*Maialen*/
 function showComment(element) {
 	var comment = $(element).prevAll('.com:first').val();

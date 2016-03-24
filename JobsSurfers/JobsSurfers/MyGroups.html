@@ -13,7 +13,7 @@
         <link rel="icon" href="logo.jpg">
     </head>
     
-    <body onload="FindGroups()">
+    <body onload="FindGroups(); GetSuggestions();">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
 
@@ -64,8 +64,8 @@
                 </div><!--/.nav-collapse -->
             </div>
         </nav>
-        
-        <div id="page">
+
+        <div id="content">
             <h2 id="groups-title"> Groups you are a part of </h2>
             <span id="create-group-button"> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CreateGroupModal"> Create Group </button></span>
             <div id="GroupList"></div>
@@ -117,13 +117,13 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="FindGroups()">Close</button>
                                 <button type="button" class="btn btn-default">Invite Friends</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </body>
 </html>

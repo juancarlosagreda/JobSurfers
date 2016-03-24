@@ -53,8 +53,8 @@ public class login extends HttpServlet {
 				while(result.next()) {
 					pass = result.getString("Password");
 					if (pass.equals(password)){
-						html += "<div id=\"left-sidebar\"></div><div id=\"page\"><div id=\"make-post-form\"><textarea class=\"post-textarea\" id=\"post-text\" placeholder=\"What are you thinking about?\" maxlength=\"140\" onkeydown=\"count()\"></textarea><input type=\"text\" id=\"characters\" disabled=\"true\" value=\"140\"><button type=\"button\" class=\"btn btn-primary\" id=\"post-btn\">Post</button></div>";
-						html += "<div id=\"dashboard\"></div></div><div id=\"right-sidebar\"><h4>Connection Suggestions</h4><div class=\"connection-suggestion-placeholder\"></div><h4>Companies to Follow</h4><div class=\"companies-to-follow-placeholder\"></div></div>";
+						html += "<div id=\"left-sidebar\"></div><div id=\"page\"><div id=\"make-post-form\"><textarea class=\"post-textarea\" id=\"post-text\" placeholder=\"What are you thinking about?\" maxlength=\"140\" onkeydown=\"count()\"></textarea><input type=\"text\" id=\"characters\"  disabled=\"true\" value=\"140\"><button type=\"button\" class=\"btn btn-primary\" id=\"post-btn\" onclick=\"MakePost()\">Post</button></div>";
+						html += "<div id=\"dashboard\"></div></div><div id=\"right-sidebar\"><h4>Connection Suggestions</h4><div id=\"connection-suggestion-placeholder\"></div><h4>Companies to Follow</h4><div id=\"companies-to-follow-placeholder\"></div></div>";
 						correct = true;
 						session.setAttribute("user", userlogin);
 					}

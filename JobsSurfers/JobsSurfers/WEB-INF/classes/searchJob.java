@@ -21,33 +21,18 @@ public class searchJob extends HttpServlet {
         res.setContentType("text/html");
         PrintWriter toClient = res.getWriter();
         String html="";
-        /*html += "<!DOCTYPE HTML>");
-        html += "<html>");
-        html += "<head><title>Jobs Surfers | Jobs Searcher</title><meta name='viewport' content='width=device-width, initial-scale=1'><meta charset='utf-8'><link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'><script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js'></script><script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script><link href='sticky-footer-navbar.css' rel='stylesheet' /><script type='text/javascript' src='scripts.js'></script><link rel='stylesheet' type='text/css' href='styles.css'><style>.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{margin-left: 0px;}#logo{display: block; height: 50px; margin-top: -15px; margin-left: -15px;}.back{position: relative;display: inline;padding: 10px 15px;line-height: 20px;padding-top: 15px;padding-bottom: 15px;color: #777;list-style: none;text-decoration: none;float: left;height: 50px;padding: 15px 15px;font-size: 18px;line-height: 20px;}.back:hover, .back:focus{color: #333; text-decoration: none;}</style><script>function goBack(){window.history.back();}</script></head>");
-        html += "<body>");*/
-
-        //This is the Bootstrap Navigation Bar
-        /*File file = new File("navbar.txt");
-        Scanner scanner = new Scanner(file);
-        String text = "";
-        int i=0;
-        while (scanner.hasNext()) {
-            text += scanner.nextLine();
-            i++;
-        }
-        html += text);*/
-
-
+        
 
         //This is the content
         html += "<div class='content' id='turu'>";
         html += "<h2>List of jobs</h2>";
 
         //Iniciar sesion. Login falso.
-        HttpSession session = req.getSession(true);
+        /*HttpSession session = req.getSession(true);
         String name = "ejemplo";
-        session.setAttribute("name", name);
+        session.setAttribute("name", name);*/
         
+        //Usar sesión iniciada
         boolean sessionBool = false;
         //HttpSession session = req.getSession(false);
         if (session != null) {
@@ -55,7 +40,7 @@ public class searchJob extends HttpServlet {
         }
         
         if (sessionBool) {
-            /*String*/ name = (String)session.getAttribute("name");
+            String name = (String)session.getAttribute("name");
             if (name != null) {
                 html += "<div id='userApply'><h4>User: " + name + "</h4></div>";
             }

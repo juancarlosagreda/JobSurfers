@@ -22,27 +22,28 @@ public class GetFR extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
         String user = (String)session.getAttribute("user");
-        String html="<div id=\"content\"><h2 class=\"title\">Group Invitations</h2>";
+        String html="<div id=\"content\"><h2 class=\"title\">Friend Requests</h2>";
         
-        String sql =;
+        String sql ="SELECT UserSends FROM FriendRequests WHERE UserReceives = '";
+        sql += user + "' AND UserSends NOT IN (SELECT Friend1 FROM Friends WHERE Friend2 = '"+user+"')";
         System.out.println("sql: " + sql);
         
         try {
-            Statement ggiStatement=connection.createStatement();
-            ResultSet result = ggiStatement.executeQuery(sql);
+            Statement statement=connection.createStatement();
+            ResultSet result = statement.executeQuery(sql);
             boolean haselements = false;
             html += "<ul class=\"InvitationList\">";
             
             while(result.next()) {
                 haselements = true;
-                String group = result.getString("");
-                html += "<li><a href=\"#\">" + group + "</a><span class=\"buttons\"><button type=\"button\" class=\"btn btn-primary\" onclick=\"Join(this, "+id+", '"+group+"')\">Accept</button><button type=\"button\" class=\"btn btn-primary\">Decline</button></span></li>";
+                String sender = result.getString("UserSends");
+                html += "<li><a href=\"#\">" +sender+ "</a><span class=\"buttons\"><button type=\"button\" class=\"btn btn-primary\" onclick=\"Accept(this,'"+sender+"')\">Accept</button><button type=\"button\" class=\"btn btn-primary\">Decline</button></span></li>";
             }
             if(haselements == false){
                 html += "<h5>You have no invitations for now</h5>";
             }
             html += "</ul></div>";
-            ggiStatement.close();
+            statement.close();
         
         } catch(SQLException e){
             e.printStackTrace();

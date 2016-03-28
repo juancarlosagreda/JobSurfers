@@ -67,6 +67,10 @@
         <servlet-name>GetGI</servlet-name>
         <servlet-class>GetGI</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetFR</servlet-name>
+        <servlet-class>GetFR</servlet-class>
+    </servlet>
     <!--Hans-->
     <servlet>
         <servlet-name>register</servlet-name>
@@ -135,6 +139,10 @@
     <servlet-mapping>
         <servlet-name>GetGI</servlet-name> 
         <url-pattern>/GetGI</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetFR</servlet-name> 
+        <url-pattern>/GetFR</url-pattern>
     </servlet-mapping>
     <!--Jordi-->
     <servlet-mapping>

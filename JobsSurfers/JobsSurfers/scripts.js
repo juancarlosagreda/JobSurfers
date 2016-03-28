@@ -169,6 +169,16 @@ function Join(button, groupid, groupname) {
     xhttp.open("GET", "JoinGroup?groupID="+groupid+"&groupName="+groupname, true);
     xhttp.send();
 }
+function Accept(button, sender) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            $(button).parent().parent().fadeOut();
+        }
+    };
+    xhttp.open("GET", "AcceptFriend?sender="+sender, true);
+    xhttp.send();
+}
 
 
 /*Maialen*/

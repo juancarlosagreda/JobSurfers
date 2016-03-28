@@ -1,107 +1,114 @@
 /*Jordi */
 
-#bat {  
-  list-style:none;
-  margin:0;
-  padding:0;
+#bat {
+    list-style:none;
+    margin:0;
+    padding:0;
 }
 #bat li {
-  margin:2px;
-  padding:0; 
-  float:left;
+    margin:2px;
+    padding:0; 
+    float:left;
 }
 #guapo {
-  width:100px;
-  padding:35px 60px;
-  text-decoration:none ;
-  text-align:center;
-  color:#FFFFFF;
-  background-image: url(flex.jpg);
-  background-repeat: no-repeat;
+    width:100px;
+    padding:35px 60px;
+    text-decoration:none ;
+    text-align:center;
+    color:#FFFFFF;
+    background-image: url(flex.jpg);
+    background-repeat: no-repeat;
 }
+
 #burru {
-  width:100px;
-  padding:35px 60px;
-  text-decoration:none ;
-  text-align:center;
-  color:#FFFFFF;
-  background-image: url(flex2.jpg);
-  background-repeat: no-repeat;
+    width:100px;
+    padding:35px 60px;
+    text-decoration:none ;
+    text-align:center;
+    color:#FFFFFF;
+    background-image: url(flex2.jpg);
+    background-repeat: no-repeat;
 }
+
 button.jordi{
-border: 0;
-background: white;
+    border: 0;
+    background: white;
 }
+
 select{
-background-color: whitesmoke;
-color: silver;
-border-radius: 10px;
+    background-color: whitesmoke;
+    color: silver;
+    border-radius: 10px;
 }
 select:hover{
-border-color: #5882FA
+    border-color: #5882FA
 }
 input.jordi {
-color: black;
-margin: 5px;
-cursor: pointer;
-background-color: whitesmoke;
-color: silver;
-border-radius: 7px;
+    color: black;
+    margin: 5px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: silver;
+    border-radius: 7px;
 }
 input:hover {
-border-color: #5882FA
+    border-color: #5882FA
 }
 #create{
-padding: 10px 10px;
-font-family: Verdana;
-font-size: 14px;
-background-color: #08298A;
-color: white;
-border-radius: 15px;
-font-weight: bold;
+    padding: 10px 10px;
+    font-family: Verdana;
+    font-size: 14px;
+    background-color: #08298A;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
 }
 #reset{
-padding: 10px 10px;
-font-family: Verdana;
-font-size: 14px;
-background-color: #08298A;
-color: white;
-margin: 5px;
-border-radius: 15px;
-font-weight: bold;
+    padding: 10px 10px;
+    font-family: Verdana;
+    font-size: 14px;
+    background-color: #08298A;
+    color: white;
+    margin: 5px;
+    border-radius: 15px;
+    font-weight: bold;
 }
 #continue {
-  padding: 10px 10px;
-  font-family: Verdana;
-  font-size: 14px;
-  background-color: #08298A;
-  color: white;
-  border-radius: 15px;
-  font-weight: bold;
-  border-color: #5882FA;
+    padding: 10px 10px;
+    font-family: Verdana;
+    font-size: 14px;
+    background-color: #08298A;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    border-color: #5882FA;
 }
 #image{
-  padding: 10 10;
-  font-family: Verdana;
-  font-size: 14;
-  background-color: #08298A;
-  color: white;
-  border-radius: 15px;
-  font-weight: bold;
+    padding: 10 10;
+    font-family: Verdana;
+    font-size: 14;
+    background-color: #08298A;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
 }
 /*span {
 color: red;
 }*/
 p.hover {
- background: #ccc;
+    background: #ccc;
 }
 h1 {
-  margin-top: 100px;
+    margin-top: 100px;
 }
 
 /*Anna*/
-.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{margin-left: 0px;}
-        #logo{display: block; height: 50px; margin-top: -15px; margin-left: -15px;}
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+    margin-left: 0px;
+}
+#logo{
+    display: block; height: 50px; margin-top: -15px; margin-left: -15px;
+}
 
 #turu{
     top: -40px;
@@ -121,7 +128,7 @@ h2{
     margin-top:0px;
 }
 #userApply h4{
-  border-bottom: 0px none;
+    border-bottom: 0px none;
 }
 #showAll, #cSector, #cCompany, #cPosition, #applyButton {
     display:none;
@@ -148,146 +155,171 @@ h2{
 }
 
 /*Juan Fran*/
-.back{position: relative;display: inline;padding: 10px 15px;line-height: 20px;padding-top: 15px;padding-bottom: 15px;color: #777;list-style: none;text-decoration: none;float: left;height: 50px;padding: 15px 15px;font-size: 18px;line-height: 20px;}
-.back:hover, .back:focus{color: #333; text-decoration: none;}
-#groups-title{
-  font-size: 30px;
-  color: #000168;
-  padding: 10px;
-  display:inline;
+.back{
+    position: relative;
+    display: inline;
+    padding: 10px 15px;
+    line-height: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #777;
+    list-style: none;
+    text-decoration: none;
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
 }
+.back:hover, .back:focus{
+    color: #333;
+    text-decoration: none;
+}
+.title{
+    font-size: 30px;
+    color: #000168;
+    padding: 10px;
+    display:inline;
+}
+
 h3 {
-  font-size: 20px;
-  color: #000168;
-  padding: 10px;
+    font-size: 20px;
+    color: #000168;
+    padding: 10px;
 }
+
 h4{
-  color: #000168;
-  padding: 10px;
-  border-bottom: 1px solid #000168;
-  width: 80%;
-  text-align: center;
-  margin: auto;
+    color: #000168;
+    padding: 10px;
+    border-bottom: 1px solid #000168;
+    width: 80%;
+    text-align: center;
+    margin: auto;
 }
 
 #create-group-button {
-  display: inline;
-  position: absolute;
-  margin-left: 40%;
+    display: inline;
+    position: absolute;
+    margin-left: 40%;
 }
 #left-sidebar {
-  margin-top: 60px;
-  margin-left: 1%;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  width: 20%;
-  min-height: 300px;
-  float: left;
-  margin-right: 2%;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 1%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 20%;
+    min-height: 300px;
+    float: left;
+    margin-right: 2%;
+    padding:10px;
 }
 
 #page {
-  width: 53%;
-  min-height: 1000px;
-  margin:auto;
-  float: left;
-  margin-top: 60px;
+    position: relative;
+    width: 53%;
+    min-height: 100%;
+    margin-left:auto;
+    margin-right: auto;
+    float: left;
+    margin-top: 5%;
 }
 #right-sidebar {
-  margin-top: 60px;
-  margin-right: 1%;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 5px;
-  width: 20%;
-  min-height: 300px;
-  float: left;
-  margin-left: 2%;
+    position: relative;
+    margin-top: 5%;
+    margin-right: 1%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 20%;
+    min-height: 300px;
+    float: left;
+    margin-left: 2%;
 }
 input[type="checkbox"]{
-  width: 15px;
-  height: 15px;
+    width: 15px;
+    height: 15px;
 }
 .modal-title {
-  margin: 0;
-  line-height: 1.42857143;
-  color: white;
+    margin: 0;
+    line-height: 1.42857143;
+    color: white;
 }
 .modal-header, .modal-footer {
-  background-color: rgba(0, 0, 104, 0.91);
+    background-color: rgba(0, 0, 104, 0.91);
 }
 .form-control{
-  width: 80%;
+    width: 80%;
 }
 .modal-body {
-  background-color: #F8F8F8;
+    background-color: #F8F8F8;
 }
 .Congrats-text{
-  font-size: 20px;
+    font-size: 20px;
 }
 textarea {
-  resize: none;
-  display: block;
-  width: 100%;
-  margin: auto;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px;
+    resize: none;
+    display: block;
+    width: 100%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
 
 }
 .posts {
-  margin: auto;
-  width: 50%;
+    margin: auto;
+    width: 50%;
 }
 .post {
-  border: none;
-  background-color: white;
-  display: inline-block;
+    border: none;
+    background-color: white;
+    display: inline-block;
 }
 #postDIV{
-  border-style: solid;
-  border-width: 1px;
-  padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
 }
 .postcommentbutton {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 .showcommentform {
-  /*border: none;
-  background-color: white;
-  color: blue;
-  outline: none;*/
-  background: rgb(128, 191, 255);
-  border-radius: 5px;
+    /*border: none;
+    background-color: white;
+    color: blue;
+    outline: none;*/
+    background: rgb(128, 191, 255);
+    border-radius: 5px;
 }
 .comments{
-  border-style: solid;
-  border-width: 1px;
-  margin: 10px;
-  padding:10px;
-  background: rgb(128, 191, 255) none repeat scroll 0% 0%;
+    border-style: solid;
+    border-width: 1px;
+    margin: 10px;
+    padding:10px;
+    background: rgb(128, 191, 255) none repeat scroll 0% 0%;
 }
 .commentlist {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 #GroupList {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 .group{
-  list-style-type: none;
-  padding: 10px;
-  width: 20%;
+    list-style-type: none;
+    padding: 10px;
+    width: 20%;
 }
 .group-link:link, .group-link:visited, .group-link:hover, .group-link:active {
-  border: 1px solid #F8F8F8;
-  border-radius: 5px;
-  color: black;
-  background-color: #F8F8F8;
-  padding: 10px;
-  display:block;
-  width: 100%;
+    border: 1px solid #F8F8F8;
+    border-radius: 5px;
+    color: black;
+    background-color: #F8F8F8;
+    padding: 10px;
+    display:block;
+    width: 100%;
 }
 #characters {
     border: none;
@@ -296,16 +328,79 @@ textarea {
 }
 
 #content {
-  background-color: white;
-  border-radius: 5px;
-  width: 80%;
-  margin: auto;
-  padding: 10px;
-  margin-top:60px;
+    position: relative;
+    background-color: white;
+    border-radius: 5px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-top:5%;
+    min-height: 100%;
+}
+.SuggestionList li a, .post-author a{
+    color: #000168;
+}
+.SuggestionList li a:link {
+    color: black;
+}
+.SuggestionList {
+    width: 85%;
+    text-align: center;
+    overflow: hidden;
+}
+.SuggestionList li {
+    list-style-type: none;
+    padding: 1%;
+}
+.InvitationList {
+    padding: 20px 70px;
+    list-style-type: none;
+}
+.InvitationList li {
+    margin-bottom: 1%;
+
+    padding: 2%;
+    width: 40%;
+    border: 1px solid #F8F8F8;
+    border-radius: 5px;
+    background-color: #F8F8F8;
+
+}
+.InvitationList li button{
+    margin-left: 1%;
+    float: right;
+}
+#dashboard {
+    padding: 10px;
+}
+#post-list{
+    padding: 10px;
+}
+#post-list li {
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid #000168;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+#NumberOfFR, #NumberOfGI {
+    margin-left: 5%;
+    border-radius: 10px;
+    padding: 1%;
+    color: white;
+}
+.interactionMenu {
+    list-style-type: none;
+    padding-left: 0px;
+}
+.interactionMenu li{
+    padding: 5%;
 }
 
+
 /* Asier */
-.button{   
+.button{     
     background-color: #008CBA;
     border: none;
     color: white;
@@ -343,28 +438,33 @@ div.img {
     border: 5px solid #00FFFF;
 }
 .connection-suggestion-placeholder {
-  min-height: 100px;
+    min-height: 100px;
 }
 .companies-to-follow-placeholder {
-  min-height: 100px;
+    min-height: 100px;
 }
 
 #make-post-form {
-  border-radius: 4px;
-  background-color: white;
-  padding: 10px;
-  margin-bottom: 2%;
+    border-radius: 4px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 2%;
 }
 
 #dashboard {
-  border-radius: 4px;
-  background-color: white;
-  min-height: 900px;
+    border-radius: 4px;
+    background-color: white;
+    min-height: 900px;
 }
 
 #post-btn {
-  margin-left: 90%;
+    margin-left: 90%;
 }
 body{
-  background-color: rgba(179, 179, 179, 0.84);
+    background-color: rgba(179, 179, 179, 0.84);
+    height: 100%;
 }
+html{
+    height: 100%;
+}
+

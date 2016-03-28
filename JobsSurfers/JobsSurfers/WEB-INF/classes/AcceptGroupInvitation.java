@@ -27,7 +27,7 @@ public class AcceptGroupInvitation extends HttpServlet {
 
         String sql = "INSERT INTO GroupMembers (GroupID, Members) VALUES (";
         sql +=  "'" + groupid + "'";
-        sql +=  ", '" + invitedPerson + "')"; 
+        sql +=  ", '" + invitedPerson + "')";
         System.out.println("Insert sql: " + sql);
         
         try {

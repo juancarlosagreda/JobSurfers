@@ -52,8 +52,20 @@
         <servlet-class>AcceptFriend</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AcceptGroupInvitation</servlet-name>
-        <servlet-class>AcceptGroupInvitation</servlet-class>
+        <servlet-name>JoinGroup</servlet-name>
+        <servlet-class>JoinGroup</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetNumberOfNewFR</servlet-name>
+        <servlet-class>GetNumberOfNewFR</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetNumberOfNewGI</servlet-name>
+        <servlet-class>GetNumberOfNewGI</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetGI</servlet-name>
+        <servlet-class>GetGI</servlet-class>
     </servlet>
     <!--Hans-->
     <servlet>
@@ -109,8 +121,20 @@
         <url-pattern>/AcceptFriend</url-pattern> 
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AcceptGroupInvitation</servlet-name> 
-        <url-pattern>/AcceptGroupInvitation</url-pattern>
+        <servlet-name>JoinGroup</servlet-name> 
+        <url-pattern>/JoinGroup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetNumberOfNewFR</servlet-name> 
+        <url-pattern>/GetNumberOfNewFR</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetNumberOfNewGI</servlet-name> 
+        <url-pattern>/GetNumberOfNewGI</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetGI</servlet-name> 
+        <url-pattern>/GetGI</url-pattern>
     </servlet-mapping>
     <!--Jordi-->
     <servlet-mapping>

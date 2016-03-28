@@ -22,7 +22,7 @@ public class GetFR extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
         String user = (String)session.getAttribute("user");
-        String html="<div id=\"content\"><h2 class=\"title\">Friend Requests</h2>";
+        String html="<div id=\"content\"><h2 class=\"title\">Friend Requests</h2><div id=\"notification\"></div>";
         
         String sql ="SELECT UserSends FROM FriendRequests WHERE UserReceives = '";
         sql += user + "' AND UserSends NOT IN (SELECT Friend1 FROM Friends WHERE Friend2 = '"+user+"')";
@@ -37,7 +37,7 @@ public class GetFR extends HttpServlet {
             while(result.next()) {
                 haselements = true;
                 String sender = result.getString("UserSends");
-                html += "<li><a href=\"#\">" +sender+ "</a><span class=\"buttons\"><button type=\"button\" class=\"btn btn-primary\" onclick=\"Accept(this,'"+sender+"')\">Accept</button><button type=\"button\" class=\"btn btn-primary\">Decline</button></span></li>";
+                html += "<li><a href=\"#\">" +sender+ "</a><span class=\"buttons\"><button type=\"button\" class=\"btn btn-primary\" onclick=\"Accept(this,'"+sender+"'); emptyList('You have no more connection requests for now.')\">Accept</button><button type=\"button\" class=\"btn btn-primary\">Decline</button></span></li>";
             }
             if(haselements == false){
                 html += "<h5>You have no invitations for now</h5>";

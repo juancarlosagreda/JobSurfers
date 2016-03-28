@@ -164,20 +164,38 @@ function Join(button, groupid, groupname) {
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             $(button).parent().parent().fadeOut();
+            Joined(groupname);
         }
     };
     xhttp.open("GET", "JoinGroup?groupID="+groupid+"&groupName="+groupname, true);
     xhttp.send();
+}
+function emptyList(message){
+    setTimeout(function() {var size = $('.InvitationList').find('li').length; var sizehidden = $(".InvitationList").find('li').filter(function () {return $(this).css('display') === 'none';}).length; if(size == sizehidden){$('.InvitationList').html('<h5>'+message+'</h5>');}}, 900);
 }
 function Accept(button, sender) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             $(button).parent().parent().fadeOut();
+            Accepted(sender);
+        }
+        var size = $('.InvitationList').find('li').length
+        var sizehidden = $(".InvitationList").find('li').filter(function () {return $(this).css('display') === 'none';}).length;
+        if(size == sizehidden){
+            $('.InvitationList').html('<h5> You have no more friend requests for now</h5>');
         }
     };
     xhttp.open("GET", "AcceptFriend?sender="+sender, true);
     xhttp.send();
+}
+function Joined(groupname){
+    document.getElementById("notification").innerHTML = "<div class=\"alert alert-success fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Success!</strong> You are now a member of: "+groupname+"</div>";
+    setTimeout(function() {document.getElementById('notification').innerHTML='';},3000);
+}
+function Accepted(sender){
+    document.getElementById("notification").innerHTML = "<div class=\"alert alert-success fade in\"><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a><strong>Success!</strong> You are now connected to: "+sender+"</div>";
+    setTimeout(function() {document.getElementById('notification').innerHTML='';},3000);
 }
 
 

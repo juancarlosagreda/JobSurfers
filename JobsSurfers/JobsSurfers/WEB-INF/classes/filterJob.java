@@ -29,14 +29,15 @@ public class filterJob extends HttpServlet {
         
         boolean sessionBool = false;
         HttpSession session = req.getSession(false);
+        String user = (String)session.getAttribute("user");
         if (session != null) {
             sessionBool = true;
         }
         
         if (sessionBool) {
-            String name = (String)session.getAttribute("name");
-            if (name != null) {
-                html += "<div id='userApply'><h4>User: " + name + "</h4></div>";
+            
+            if (user != null) {
+                html += "<div id='userApply'><h4>User: " + user + "</h4></div>";
             }
             
         }
@@ -54,7 +55,7 @@ public class filterJob extends HttpServlet {
                 } 
                 else if(req.getParameter("comboCompany") != null){
                     x = req.getParameter("comboCompany");
-                    str = "company";
+                    str = "CompanyReg.CompanyName";
                 }
                 else{
                     x = req.getParameter("comboPosition");
@@ -63,7 +64,7 @@ public class filterJob extends HttpServlet {
 
                 html += "<div id='filter'>";
                 html += "<form method=GET action='apply'>";
-                ResultSet filter = stmt.executeQuery("SELECT code, sector, company, position FROM jobslist WHERE " + str + " ='" + x + "'" );
+                ResultSet filter = stmt.executeQuery("SELECT jobslist.code, jobslist.sector, CompanyReg.CompanyName, jobslist.position FROM CompanyReg, jobslist WHERE CompanyReg.CompanyID = jobslist.company AND " + str + " ='" + x + "'" );
                 html += "<table border='1' class='table table-hover table-condensed'>";          
                 html += "<thead><tr><th></th><th>Job ID</th><th>Sector</th><th>Company</th><th>Position</th></tr></thead><tbody>";
                 while(filter.next()){
@@ -74,7 +75,7 @@ public class filterJob extends HttpServlet {
                     }
                     html += "<td>" + codeStr + "</td>";
                     html += "<td>" + filter.getString("sector") + "</td>";
-                    html += "<td>" + filter.getString("company") + "</td>";
+                    html += "<td>" + filter.getString("CompanyName") + "</td>";
                     html += "<td>" + filter.getString("position") + "</td>";
                     html += "</tr>";
                 }
@@ -84,7 +85,11 @@ public class filterJob extends HttpServlet {
                 html += "</div>";
                 filter.close();
             }
-            ResponseManager.output(res, html);
+            if (sessionBool) {
+                ResponseManager.outputUWOP(res, user, html);
+            }else{
+                ResponseManager.output(res, html);
+            }
             stmt.close();
 
         } catch(SQLException e) {

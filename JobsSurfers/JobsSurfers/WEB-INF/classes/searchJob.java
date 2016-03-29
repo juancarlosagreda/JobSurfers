@@ -29,20 +29,20 @@ public class searchJob extends HttpServlet {
 
         //Iniciar sesion. Login falso.
         /*HttpSession session = req.getSession(true);
-        String name = "ejemplo";
-        session.setAttribute("name", name);*/
+        String user = "ejemplo";
+        session.setAttribute("user", user);*/
         
         //Usar sesión iniciada
         boolean sessionBool = false;
         HttpSession session = req.getSession(false);
+        String user = (String)session.getAttribute("user");
         if (session != null) {
             sessionBool = true;
         }
         
         if (sessionBool) {
-            String name = (String)session.getAttribute("name");
-            if (name != null) {
-                html += "<div id='userApply'><h4>User: " + name + "</h4></div>";
+            if (user != null) {
+                html += "<div id='userApply'><h4>User: " + user + "</h4></div>";
             }
         }
 
@@ -53,7 +53,7 @@ public class searchJob extends HttpServlet {
 
         try {
             Statement stmt=conn.createStatement();
-            ResultSet resultAll = stmt.executeQuery("SELECT jobslist.code, jobslist.sector, CompanyReg.CompanyName As company, jobslist.position FROM jobslist, CompanyReg WHERE jobslist.company = CompanyReg.CompanyID");
+            ResultSet resultAll = stmt.executeQuery("SELECT jobslist.code, jobslist.sector, CompanyReg.CompanyName, jobslist.position FROM CompanyReg INNER JOIN jobslist ON CompanyReg.CompanyID = jobslist.company;");
             html += "<div class='container' id='showAll'><h3>All the job offers</h3>";
             html += "<form method=GET action='apply'>";
             html += "<table border='1' class='table table-hover table-condensed'>";          
@@ -66,7 +66,7 @@ public class searchJob extends HttpServlet {
                 }
                 html += "<td>" + codeStr + "</td>";
                 html += "<td>" + resultAll.getString("sector") + "</td>";
-                html += "<td>" + resultAll.getString("company") + "</td>";
+                html += "<td>" + resultAll.getString("CompanyName") + "</td>";
                 html += "<td>" + resultAll.getString("position") + "</td>";
                 html += "</tr>";
             }
@@ -111,11 +111,11 @@ public class searchJob extends HttpServlet {
             int lComp = numComp.getInt(1);
             numComp.close();
             
-            ResultSet rComp = stmt.executeQuery("SELECT company FROM jobslist GROUP BY company");
+            ResultSet rComp = stmt.executeQuery("SELECT CompanyName FROM CompanyReg, jobslist WHERE CompanyReg.CompanyID = jobslist.company GROUP BY CompanyName;");
             i = 0;
             String[] arrayComp = new String[lComp];
             while(rComp.next()){
-                arrayComp[i] = rComp.getString("company");
+                arrayComp[i] = rComp.getString("CompanyName");
                 i++;
             }
             rComp.close();
@@ -162,21 +162,20 @@ public class searchJob extends HttpServlet {
             html += "</select></div>";
             html += "<input class='click' type=submit value='Apply filter' />";
             html += "</form></div>";
-
-
+            html += "</div>";
+            html += "</body>";
+            html += "</div";
             stmt.close();
 
         } catch(SQLException e) {
             e.printStackTrace();
         }
-     
 
         if (sessionBool) {
-        }
-        html += "</div>";
-        html += "</body>";
-        html += "</html>";
-        ResponseManager.output(res, html);
+            ResponseManager.outputUWOP(res, user, html);
+        }else{
+            ResponseManager.output(res, html);
+        }   
         toClient.close();
     }
     public void destroy() {

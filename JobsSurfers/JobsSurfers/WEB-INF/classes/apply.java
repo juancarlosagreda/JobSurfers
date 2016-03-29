@@ -31,15 +31,14 @@ public class apply extends HttpServlet {
         html += "<div class='modal-dialog'>";
 
         HttpSession session = req.getSession(false);
-
+        String user = (String)session.getAttribute("user");
         if (req.getParameter("job") != null){
             if (session != null) {
-                String name = (String)session.getAttribute("name");
-                if (name != null) {
+                if (user != null) {
                     String cJob = req.getParameter("job");
-                    String sql = "INSERT INTO Applications (Username, code) VALUES (";            
-                    sql +=  "'" + name + "'";
-                    sql +=  ", '" + cJob + "')";
+                    String sql = "INSERT INTO Applications (Username, code, status) VALUES (";            
+                    sql +=  "'" + user + "'";
+                    sql +=  ", '" + cJob + "', 1)";
                     
                     //<!-- Modal content-->
                     html += "<div class='modal-content'>";
@@ -48,7 +47,7 @@ public class apply extends HttpServlet {
                     html += "<h4 class='modal-title'>Application succeed</h4>";
                     html += "</div>";
                     html += "<div class='modal-body'>";
-                    html += "<p>The user " + name + " has applied for the job offer " + cJob + ".</p>";
+                    html += "<p>The user " + user + " has applied for the job offer " + cJob + ".</p>";
                     html += "</div>";
                     html += "<div class='modal-footer'>";
                     html += "<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>";
@@ -97,22 +96,22 @@ public class apply extends HttpServlet {
         html += "</div>";
         html += "</div>";
 
-        if (req.getParameter("job") != null && session != null){
-            String name = (String)session.getAttribute("name");
-            String select = "SELECT code, sector, company, position FROM jobslist WHERE code IN (SELECT code FROM Applications WHERE Username ='"+ name +"');";
-            html += "<h2>Your Job Applications</h2>";
-            html += "<div id='userApply'><h4>User: " + name + "</h4></div>";
+        if (session != null){
+            String select = "SELECT Applications.code, jobslist.sector, CompanyReg.CompanyName, jobslist.position, ApplicationStatus.status FROM (CompanyReg INNER JOIN jobslist ON CompanyReg.CompanyID = jobslist.company) INNER JOIN (ApplicationStatus INNER JOIN Applications ON ApplicationStatus.statusID = Applications.status) ON jobslist.code = Applications.code WHERE Username = '"+ user +"';";
+            html += "<h2>My Job Applications</h2>";
+            html += "<div id='userApply'><h4>User: " + user + "</h4></div>";
             try{
                 Statement stmt2 = conn.createStatement();
                 ResultSet myJobs = stmt2.executeQuery(select);
                 html += "<table border='1' class='table table-hover table-condensed'>";          
-                html += "<thead><tr><th>Job ID</th><th>Sector</th><th>Company</th><th>Position</th></tr></thead><tbody>";
+                html += "<thead><tr><th>Job ID</th><th>Sector</th><th>Company</th><th>Position</th><th>Status</th></tr></thead><tbody>";
                 while(myJobs.next()){
                     html += "<tr>";
                     html += "<td>" + myJobs.getString("code") + "</td>";
                     html += "<td>" + myJobs.getString("sector") + "</td>";
-                    html += "<td>" + myJobs.getString("company") + "</td>";
+                    html += "<td>" + myJobs.getString("CompanyName") + "</td>";
                     html += "<td>" + myJobs.getString("position") + "</td>";
+                    html += "<td>" + myJobs.getString("status") + "</td>";
                     html += "</tr>";
                 }
                 html += "</tbody></table>";
@@ -124,7 +123,7 @@ public class apply extends HttpServlet {
             }
         }
         html += "</div></body></html>";
-        ResponseManager.output(res, html);
+        ResponseManager.outputUWOP(res, user, html);
         toClient.close();
     }
 }

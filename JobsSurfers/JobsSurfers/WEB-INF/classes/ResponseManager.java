@@ -45,7 +45,7 @@ public class ResponseManager extends HttpServlet {
         toClient.println("<title>Jobs Surfers - "+user+"</title><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta charset=\"utf-8\">");
         toClient.println("<link rel=\"stylesheet\" href=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\">");
         toClient.println("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js\"></script><script src=\"http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js\"></script><script src=\"scripts.js\"></script>");
-        toClient.println("<link rel=\"stylesheet\" href=\"style.css\"></head><body>");
+        toClient.println("<link rel=\"stylesheet\" href=\"style.css\"><link rel=\"icon\" href=\"icon.jpg\"></head><body>");
         toClient.println("<nav class=\"navbar navbar-default navbar-fixed-top\"><div class=\"container\"><div class=\"navbar-header\">");
         toClient.println("<button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\"><span class=\"sr-only\">Toggle navigation</span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span><span class=\"icon-bar\"></span></button>");
         toClient.println("<a class=\"back\" href=\"#\">< BACK</a><a class=\"navbar-brand\" href=\"#\"><img id=\"logo\" src=\"logo.jpg\" alt=\"Jobs Surfers Logo\" title=\"Jobs Surfers Logo\" /></a></div>");

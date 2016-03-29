@@ -2,6 +2,21 @@
 <web-app>
     <!--Anna-->
     <servlet>
+        <servlet-name>message</servlet-name>
+        <servlet-class>message</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
+        <servlet-name>showConnections</servlet-name>
+        <servlet-class>showConnections</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
+        <servlet-name>myApplications</servlet-name>
+        <servlet-class>myApplications</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
         <servlet-name>apply</servlet-name>
         <servlet-class>apply</servlet-class>
     </servlet>
@@ -82,7 +97,21 @@
     </servlet>
 
 
-
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>message</servlet-name>
+        <url-pattern>/message</url-pattern>
+    </servlet-mapping>
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>showConnections</servlet-name>
+        <url-pattern>/showConnections</url-pattern>
+    </servlet-mapping>
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>myApplications</servlet-name>
+        <url-pattern>/myApplications</url-pattern>
+    </servlet-mapping>
     <!--Anna-->
     <servlet-mapping>
         <servlet-name>apply</servlet-name>

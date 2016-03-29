@@ -23,7 +23,7 @@ public class AcceptFriend extends HttpServlet {
         String userReceives = (String)session.getAttribute("user");
         String userSends = req.getParameter("sender");
 
-        String sql = "INSERT INTO Friends (UserSends, UserReceives) VALUES (";
+        String sql = "INSERT INTO Friends (Friend1, Friend2) VALUES (";
         sql +=  "'" + userSends + "'";
         sql +=  ", '" + userReceives + "')"; 
         System.out.println("Insert sql: " + sql);

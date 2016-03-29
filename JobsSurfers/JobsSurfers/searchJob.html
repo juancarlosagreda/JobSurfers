@@ -1,0 +1,350 @@
+<!DOCTYPE HTML> 
+<HTML lang="en" dir="LTR">
+  <head>
+    <title>Jobs Surfers | Apply for a job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
+  </head>
+
+  <body onload='openM()'>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span><span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="back" onClick="goBack()">< BACK</a>
+          <a class="navbar-brand" href="#">
+            <img id="logo" src="logo.jpg" alt="Jobs Surfers Logo" title="Jobs Surfers Logo" />
+          </a>
+        </div>
+
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </form>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="messages"><p id="envelope"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></p></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Find Connections</a></li>
+                <li><a href="showConnections">My Connections</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Validate aptitudes</a></li>
+                <li><a href="#">Ask for recommendation</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Companies I Follow</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="searchJob">Apply for a job </a></li>
+                <li><a href="myApplications">See application's status </a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Post a job</a></li>
+                <li><a href="#">Manage jobs</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="Postfoto.html">Create Profile </a></li>
+                <li><a href="#">Add Aptitudes</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="MyGroups.html">Groups</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Sing Out <span class="glyphicon glyphicon-off" aria-hidden="true"></span></a></li>
+                <li><a href="#">Delete Account <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div id="page">
+      <div class='content' id='turu'>
+        <h2>List of jobs</h2>
+        <div id='userApply'>
+          <h4>User: ejemplo</h4>
+        </div>
+
+        <div class='searchOptions'>
+          <button class='options' onclick='showAll()'>Show all the job offers</button>
+          <button class='options' onclick='filterSector()'>Filter by sector</button>
+          <button class='options' onclick='filterCompany()'>Filter by company</button>
+          <button class='options' onclick='filterPosition()'>Filter by position</button>
+        </div>
+
+        <div class='container' id='showAll'>
+          <h3>All the job offers</h3>
+          <form method=GET action='apply'>
+            <table border='1' class='table table-hover table-condensed'>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Job ID</th>
+                  <th>Sector</th>
+                  <th>Company</th>
+                  <th>Position</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB001'></td>
+                  <td>JOB001</td>
+                  <td>Fashion</td>
+                  <td>Prada</td>
+                  <td>Designer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB002'></td>
+                  <td>JOB002</td>
+                  <td>Fashion</td>
+                  <td>Chanel</td>
+                  <td>Designer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB003'></td>
+                  <td>JOB003</td>
+                  <td>Comunication</td>
+                  <td>The Times</td>
+                  <td>Chief Editor</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB004'></td>
+                  <td>JOB004</td>
+                  <td>Comunication</td>
+                  <td>The Times</td>
+                  <td>Reporter</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB005'></td>
+                  <td>JOB005</td>
+                  <td>Comunication</td>
+                  <td>The New York Times</td>
+                  <td>Chief Editor</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB006'></td>
+                  <td>JOB006</td>
+                  <td>Comunication</td>
+                  <td>The New York Times</td>
+                  <td>Reporter</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB007'></td>
+                  <td>JOB007</td>
+                  <td>Social Media</td>
+                  <td>Facebook</td>
+                  <td>Programmer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB008'></td>
+                  <td>JOB008</td>
+                  <td>Social Media</td>
+                  <td>Facebook</td>
+                  <td>Analist</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB009'></td>
+                  <td>JOB009</td>
+                  <td>Social Media</td>
+                  <td>Facebook</td>
+                  <td>Software Engineer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB010'></td>
+                  <td>JOB010</td>
+                  <td>University</td>
+                  <td>Tecnun</td>
+                  <td>Teacher</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB011'></td>
+                  <td>JOB011</td>
+                  <td>University</td>
+                  <td>Tecnun</td>
+                  <td>Scientist</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB012'></td>
+                  <td>JOB012</td>
+                  <td>University</td>
+                  <td>Tecnun</td>
+                  <td>Administrator</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB013'></td>
+                  <td>JOB013</td>
+                  <td>Electronics</td>
+                  <td>Apple</td>
+                  <td>Graphic Designer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB014'></td>
+                  <td>JOB014</td>
+                  <td>Electronics</td>
+                  <td>Apple</td>
+                  <td>Programmer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB015'></td>
+                  <td>JOB015</td>
+                  <td>Electronics</td>
+                  <td>Apple</td>
+                  <td>Software Engineer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB016'></td>
+                  <td>JOB016</td>
+                  <td>Electronics</td>
+                  <td>Google</td>
+                  <td>Graphic Designer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB017'></td>
+                  <td>JOB017</td>
+                  <td>Electronics</td>
+                  <td>Google</td>
+                  <td>Programmer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB018'></td>
+                  <td>JOB018</td>
+                  <td>Electronics</td>
+                  <td>Google</td>
+                  <td>Software Engineer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB019'></td>
+                  <td>JOB019</td>
+                  <td>Electronics</td>
+                  <td>Dell</td>
+                  <td>CEO</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB020'></td>
+                  <td>JOB020</td>
+                  <td>Automotive</td>
+                  <td>Audi</td>
+                  <td>Mechanic</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB021'></td>
+                  <td>JOB021</td>
+                  <td>Automotive</td>
+                  <td>Audi</td>
+                  <td>Mechanical Engineer</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB022'></td>
+                  <td>JOB022</td>
+                  <td>Automotive</td>
+                  <td>BMV</td>
+                  <td>Mechanic</td>
+                </tr>
+                <tr>
+                  <td><input type='radio' name='job' value='JOB023'></td>
+                  <td>JOB023</td>
+                  <td>Automotive</td>
+                  <td>BMV</td>
+                  <td>Mechanical Engineer</td>
+                </tr>
+              </tbody>
+            </table>
+            <input type=submit class='applyButton' value='Apply for the job' />
+          </form>
+        </div>
+
+        <div id='cSector'>
+          <h3>Filter by sector</h3>
+          <form role='form' action='filterJob' method=GET>
+            <div class='form-group'>
+              <label for='cS'>Choose one sector from the list below:</label>
+              <select id='cS' class='form-control' name='comboSector'>
+                <option value='null'> - Select - </option>
+                <option value='Automotive'>Automotive</option>
+                <option value='Comunication'>Comunication</option>
+                <option value='Electronics'>Electronics</option>
+                <option value='Fashion'>Fashion</option>
+                <option value='Social Media'>Social Media</option>
+                <option value='University'>University</option>
+              </select>
+            </div>
+            <input class='click' type=submit value='Apply filter' />
+          </form>
+        </div>
+
+        <div id='cCompany'>
+          <h3>Filter by company</h3>
+          <form role='form' action='filterJob' method=GET>
+            <div class='form-group'>
+              <label for='cC'>Choose one company from the list below:</label>
+              <select id='cC' class='form-control' name='comboCompany'>
+                <option value='null'> - Select - </option>
+                <option value='Apple'>Apple</option>
+                <option value='Audi'>Audi</option>
+                <option value='BMV'>BMV</option>
+                <option value='Chanel'>Chanel</option>
+                <option value='Dell'>Dell</option>
+                <option value='Facebook'>Facebook</option>
+                <option value='Google'>Google</option>
+                <option value='Prada'>Prada</option>
+                <option value='Tecnun'>Tecnun</option>
+                <option value='The New York Times'>The New York Times</option>
+                <option value='The Times'>The Times</option>
+              </select>
+            </div>
+            <input class='click' type=submit value='Apply filter' />
+          </form>
+        </div>
+
+        <div id='cPosition'>
+          <h3>Filter by position</h3>
+          <form role='form' action='filterJob' method=GET>
+            <div class='form-group'>
+              <label for='cP'>Choose one position from the list below:</label>
+              <select id='cP' class='form-control' name='comboPosition'>
+                <option value='null'> - Select - </option>
+                <option value='Administrator'>Administrator</option>
+                <option value='Analist'>Analist</option>
+                <option value='CEO'>CEO</option>
+                <option value='Chief Editor'>Chief Editor</option>
+                <option value='Designer'>Designer</option>
+                <option value='Graphic Designer'>Graphic Designer</option>
+                <option value='Mechanic'>Mechanic</option>
+                <option value='Mechanical Engineer'>Mechanical Engineer</option>
+                <option value='Programmer'>Programmer</option>
+                <option value='Reporter'>Reporter</option>
+                <option value='Scientist'>Scientist</option>
+                <option value='Software Engineer'>Software Engineer</option>
+                <option value='Teacher'>Teacher</option>
+              </select>
+            </div>
+            <input class='click' type=submit value='Apply filter' />
+          </form>
+        </div>
+
+      </div>
+    </div>
+    
+  </body>
+</html>

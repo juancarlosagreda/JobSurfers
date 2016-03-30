@@ -11,7 +11,7 @@ public class MessageModal extends HttpServlet {
 
         //Modal content
         html += "<div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'>&times;</button><h4 class='modal-title'>Send a message to <span id='sperson'></span></h4></div>";
-        html += "<div class='modal-body'><form role='form' id='messageForm' action='showConnections'><div class='form-group'><label for='from'>From:</label><input type='text' class='form-control' id='from' value='"+from+"' readonly=''></div><div class='form-group'><label for='to'>To:</label><input type='text' class='form-control' id='to' readonly=''></div><textarea class='form-control' rows='5' id='textMessage' placeholder='Write your message here...' ></textarea></form></div>";
+        html += "<div class='modal-body'><form role='form' id='messageForm' action=''><div class='form-group'><label for='from'>From:</label><input type='text' class='form-control' id='from' value='"+from+"' readonly=''></div><div class='form-group'><label for='to'>To:</label><input type='text' class='form-control' id='to' readonly=''></div><textarea class='form-control' rows='5' id='textMessage' placeholder='Write your message here...' ></textarea></form></div>";
         html += "<div class='modal-footer'><button type='button' class='btn btn-default' data-dismiss='modal'><a href='#'>Close</a></button><button type='button' id='bsend' class='btn btn-primary' onclick='createMessage()'>Send message</button></div></div>";
 
         //End Modal

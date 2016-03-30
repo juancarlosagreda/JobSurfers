@@ -47,7 +47,23 @@ function filterPosition(){
 function openM(){
     $("#myModal").modal();
 }
-
+function openWM(amigo){
+  document.getElementById("sperson").innerHTML=amigo;
+  document.getElementById("rperson").innerHTML=amigo;
+  document.getElementById("to").value=amigo;
+  $("#WriteModal").modal();
+}
+function createMessage() {
+  $('#WriteModal').modal('hide');
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        $('#SentModal').modal('show');
+      }
+    };
+      xhttp.open("GET", "message?from="+ document.getElementById("from").value+"&to="+ document.getElementById("to").value+"&textMessage="+ document.getElementById("textMessage").value, true);
+      xhttp.send();
+}
 /*Juan Fran*/
 function createGroup() {
     $('#CreateGroupModal').modal('hide');

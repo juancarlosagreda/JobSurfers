@@ -2,6 +2,11 @@
 <web-app>
     <!--Anna-->
     <servlet>
+        <servlet-name>showMessages</servlet-name>
+        <servlet-class>showMessages</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
         <servlet-name>message</servlet-name>
         <servlet-class>message</servlet-class>
     </servlet>
@@ -96,7 +101,11 @@
         <servlet-class>login</servlet-class>
     </servlet>
 
-
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>showMessages</servlet-name>
+        <url-pattern>/showMessages</url-pattern>
+    </servlet-mapping>
     <!--Anna-->
     <servlet-mapping>
         <servlet-name>message</servlet-name>

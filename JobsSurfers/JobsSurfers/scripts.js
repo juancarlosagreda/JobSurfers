@@ -44,8 +44,22 @@ function filterPosition(){
     document.getElementById("cCompany").style.display="none";
     document.getElementById("cPosition").style.display="block";
 }
+function showConversation(conv){
+  var x = document.getElementsByClassName("message-list");
+  for (var i=0;i<x.length;i++){
+    x[i].style.display="none";
+  }
+  document.getElementById("conv"+conv).style.display="block";
+}
 function openM(){
     $("#myModal").modal();
+}
+function openNewWM(){
+  var amigo = document.getElementById("friendlist").value;
+  document.getElementById("sperson").innerHTML=amigo;
+  document.getElementById("rperson").innerHTML=amigo;
+  document.getElementById("to").value=amigo;
+  $("#WriteModal").modal();
 }
 function openWM(amigo){
   document.getElementById("sperson").innerHTML=amigo;

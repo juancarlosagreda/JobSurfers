@@ -2,6 +2,16 @@
 <web-app>
     <!--Anna-->
     <servlet>
+        <servlet-name>validate</servlet-name>
+        <servlet-class>validate</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
+        <servlet-name>validateAptitudes</servlet-name>
+        <servlet-class>validateAptitudes</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
         <servlet-name>showMessages</servlet-name>
         <servlet-class>showMessages</servlet-class>
     </servlet>
@@ -9,11 +19,6 @@
     <servlet>
         <servlet-name>message</servlet-name>
         <servlet-class>message</servlet-class>
-    </servlet>
-    <!--Anna-->
-    <servlet>
-        <servlet-name>showConnections</servlet-name>
-        <servlet-class>showConnections</servlet-class>
     </servlet>
     <!--Anna-->
     <servlet>
@@ -34,6 +39,11 @@
     <servlet>
         <servlet-name>filterJob</servlet-name>
         <servlet-class>filterJob</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
+        <servlet-name>showConnections</servlet-name>
+        <servlet-class>showConnections</servlet-class>
     </servlet>
     <!--Asier-->
     <servlet>
@@ -72,24 +82,8 @@
         <servlet-class>AcceptFriend</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>JoinGroup</servlet-name>
-        <servlet-class>JoinGroup</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetNumberOfNewFR</servlet-name>
-        <servlet-class>GetNumberOfNewFR</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetNumberOfNewGI</servlet-name>
-        <servlet-class>GetNumberOfNewGI</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetGI</servlet-name>
-        <servlet-class>GetGI</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>GetFR</servlet-name>
-        <servlet-class>GetFR</servlet-class>
+        <servlet-name>AcceptGroupInvitation</servlet-name>
+        <servlet-class>AcceptGroupInvitation</servlet-class>
     </servlet>
     <!--Hans-->
     <servlet>
@@ -103,6 +97,16 @@
 
     <!--Anna-->
     <servlet-mapping>
+        <servlet-name>validate</servlet-name>
+        <url-pattern>/validate</url-pattern>
+    </servlet-mapping>
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>validateAptitudes</servlet-name>
+        <url-pattern>/validateAptitudes</url-pattern>
+    </servlet-mapping>
+    <!--Anna-->
+    <servlet-mapping>
         <servlet-name>showMessages</servlet-name>
         <url-pattern>/showMessages</url-pattern>
     </servlet-mapping>
@@ -110,11 +114,6 @@
     <servlet-mapping>
         <servlet-name>message</servlet-name>
         <url-pattern>/message</url-pattern>
-    </servlet-mapping>
-    <!--Anna-->
-    <servlet-mapping>
-        <servlet-name>showConnections</servlet-name>
-        <url-pattern>/showConnections</url-pattern>
     </servlet-mapping>
     <!--Anna-->
     <servlet-mapping>
@@ -135,6 +134,11 @@
     <servlet-mapping>
         <servlet-name>filterJob</servlet-name>
         <url-pattern>/filterJob</url-pattern>
+    </servlet-mapping>
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>showConnections</servlet-name>
+        <url-pattern>/showConnections</url-pattern>
     </servlet-mapping>
     <!--Maialen-->
     <servlet-mapping>
@@ -163,24 +167,8 @@
         <url-pattern>/AcceptFriend</url-pattern> 
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>JoinGroup</servlet-name> 
-        <url-pattern>/JoinGroup</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetNumberOfNewFR</servlet-name> 
-        <url-pattern>/GetNumberOfNewFR</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetNumberOfNewGI</servlet-name> 
-        <url-pattern>/GetNumberOfNewGI</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetGI</servlet-name> 
-        <url-pattern>/GetGI</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>GetFR</servlet-name> 
-        <url-pattern>/GetFR</url-pattern>
+        <servlet-name>AcceptGroupInvitation</servlet-name> 
+        <url-pattern>/AcceptGroupInvitation</url-pattern>
     </servlet-mapping>
     <!--Jordi-->
     <servlet-mapping>

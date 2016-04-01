@@ -92,6 +92,9 @@ function invalidate(user, apt, val){
   xhttp.open("GET", "validate?inuser="+ user+"&inaptitude="+ apt+"&invalidator="+ val, true);
   xhttp.send();
 }
+function searchAll(){
+  window.location="searcher?nameSearch="+document.getElementById("inp-search").value;
+}
 /*Juan Fran*/
 function createGroup() {
 	$('#CreateGroupModal').modal('hide');

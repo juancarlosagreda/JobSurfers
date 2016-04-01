@@ -2,6 +2,11 @@
 <web-app>
     <!--Anna-->
     <servlet>
+        <servlet-name>searcher</servlet-name>
+        <servlet-class>searcher</servlet-class>
+    </servlet>
+    <!--Anna-->
+    <servlet>
         <servlet-name>validate</servlet-name>
         <servlet-class>validate</servlet-class>
     </servlet>
@@ -95,6 +100,11 @@
         <servlet-class>login</servlet-class>
     </servlet>
 
+    <!--Anna-->
+    <servlet-mapping>
+        <servlet-name>searcher</servlet-name>
+        <url-pattern>/searcher</url-pattern>
+    </servlet-mapping>
     <!--Anna-->
     <servlet-mapping>
         <servlet-name>validate</servlet-name>

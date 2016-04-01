@@ -126,6 +126,7 @@ h1 {
 }
 .turusend{
   float:right;
+  margin-left: 5px;
 }
 #bsend{
   background-color: darkblue;
@@ -211,6 +212,35 @@ h2{
   color: #fff;
   background-color: #3f92c6;
   border-color: #ccc;
+}
+#adv-search{
+  width:400px !important;
+}
+#inp-search{
+  width:100% !important;
+}
+#btn-group-search{
+  display: flex !important;
+}
+#dropdown-search{
+  width:400px;
+}
+.form-group-search{
+  margin-bottom: 0;
+  display: block;
+  float: left;
+  padding: 5px 20px;
+  width: 100%;
+}
+.btn-submit-search{
+  float: right;
+  margin: 0px 10px;
+}
+.form-control-search{
+  width:100% !important;
+}
+.list-group-item{
+  overflow:auto;
 }
 /*Juan Fran*/
 .back{position: relative;display: inline;padding: 10px 15px;line-height: 20px;padding-top: 15px;padding-bottom: 15px;color: #777;list-style: none;text-decoration: none;float: left;height: 50px;padding: 15px 15px;font-size: 18px;line-height: 20px;}

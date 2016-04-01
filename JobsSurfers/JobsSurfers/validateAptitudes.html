@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<HTML lang="en" dir="LTR">
+  <head>
+    <title>Jobs Surfers - anna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="back" href="#">< BACK</a>
+          <a class="navbar-brand" href="#"><img id="logo" src="logo.jpg" alt="Jobs Surfers Logo" title="Jobs Surfers Logo" /></a>
+        </div>
+        <div class="input-group navbar-form navbar-left" id="adv-search">
+          <input type="text" class="form-control" id="inp-search" placeholder="Search for users and companies..." />
+          <div class="input-group-btn">
+            <div class="btn-group" id="btn-group-search" role="group">
+              <div class="dropdown dropdown-lg">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                <div class="dropdown-menu dropdown-menu-right" id="dropdown-search" role="menu">
+                  <form role="form" action="searcher" accept-charset=utf-8>
+                    <div class="form-group form-group-search">
+                      <label for="selFilter">Filter by</label>
+                      <select class="form-control form-control-search" id="selFilter" name="selFilter">
+                        <option value="1">User</option>
+                        <option value="2">Company</option>
+                      </select>
+                    </div>
+                    <div class="form-group form-group-search">
+                      <label for="nameSearch">Name</label>
+                      <input type="text" id="nameSearch" name="nameSearch" class="form-control form-control-search" type="text" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                  </form>
+                </div>
+              </div>
+              <button type="button" id="searchAllBtn" onclick="searchAll()"  class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </div>
+          </div>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="showMessages"><p id="envelope"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span></p></a></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Find Connections <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
+                <li><a href="showConnections">My Connections</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="validateAptitudes">Validate aptitudes <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></li>
+                <li><a href="#">Ask for recommendation</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="CompaniesFollowing">Companies I Follow</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="searchJob">Apply for a job <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span></a></li>
+                <li><a href="myApplications">See applications' status</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Post a job <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+                <li><a href="#">Manage jobs <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">anna's Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Create Profile <span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                <li><a href="#">Add Aptitudes</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="FindGroups">Groups</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Sign Out <span class="glyphicon glyphicon-off" aria-hidden="true"></span></a></li>
+                <li><a href="#">Delete Account <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class='content' id='turuconnections'>
+      <h2>Validate your friends' aptitudes</h2>
+      <div id='userApply'><h4>User: anna</h4></div>
+      <div class='list-group'>
+        <button class='list-group-item' onclick='showConversation(`Asier`)'>
+          <h5>Aptitudes of Asier<span class='badge'>7</span></h5>
+        </button>
+        <button class='list-group-item' onclick='showConversation(`Maialen`)'>
+          <h5>Aptitudes of Maialen<span class='badge'>8</span></h5>
+        </button>
+      </div>
+      <ul id='convAsier' class='list-group message-list'>
+        <h5>Aptitudes of Asier</h5>
+        <li class='list-group-item aptitudes'>Word<button type='button' id='aptAsierWord'class='btn btn-default validateBtn' onclick='validate(`Asier`, `Word`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>Excel<button type='button' id='aptAsierExcel'class='btn btn-default validateBtn' onclick='validate(`Asier`, `Excel`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>PowerPoint<button type='button' id='aptAsierPowerPoint'class='btn btn-default validateBtn' onclick='validate(`Asier`, `PowerPoint`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>HTML5<button type='button' id='aptAsierHTML5'class='btn btn-default validateBtn' onclick='validate(`Asier`, `HTML5`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>CSS3<button type='button' id='aptAsierCSS3'class='btn btn-default validateBtn' onclick='validate(`Asier`, `CSS3`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>Java<button type='button' id='aptAsierJava'class='btn btn-default validateBtn' onclick='validate(`Asier`, `Java`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>Javascript<button type='button' id='aptAsierJavascript'class='btn btn-default validateBtn' onclick='validate(`Asier`, `Javascript`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+      </ul>
+      <ul id='convMaialen' class='list-group message-list'>
+        <h5>Aptitudes of Maialen</h5>
+        <li class='list-group-item aptitudes'>Word<button type='button' id='aptMaialenWord'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `Word`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>VenSim<button type='button' id='aptMaialenVenSim'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `VenSim`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>Excel<button type='button' id='aptMaialenExcel'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `Excel`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>HTML5<button type='button' id='aptMaialenHTML5'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `HTML5`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>CSS3<button type='button' id='aptMaialenCSS3'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `CSS3`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>Java<button type='button' id='aptMaialenJava'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `Java`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>Javascript<button type='button' id='aptMaialenJavascript'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `Javascript`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+        <li class='list-group-item aptitudes'>AJAX<button type='button' id='aptMaialenAJAX'class='btn btn-default validateBtn' onclick='validate(`Maialen`, `AJAX`, `anna`)'><span class='glyphicon glyphicon-check'></span> Validate </button></li>
+      </ul>
+    </div>
+  </body>
+</html>

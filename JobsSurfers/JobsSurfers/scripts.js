@@ -1,22 +1,48 @@
 /*Jordi*/
-
 function see(image){
   document.getElementById("image").innerHTML = "<img src="+image+">" 
 }
-
 function goBack() {
     window.history.back()
 }
 function al () {
   if (document.getElementById("username-input").value=="" || document.getElementById("firstname-input").value=="" || document.getElementById("lastname-input").value=="") {
-    alert("Problem to define username, firstname or lastname ");
+    alert("Problem to define user name, first name or last name ");
   } else{
-    alert("Are you soure to create this profile?");
     document.getElementById("check").submit();
   }
 }
 function clean(elemento){
   elemento.value = "";
+}
+function add () {
+	if (document.getElementById("username").value=="" || document.getElementById("userreq").value==""){
+		alert("Problem with your new friend, please go back!");
+		return;
+	} else {
+		document.getElementById("newfriends").submit();
+	}
+}
+function serch() {
+	if (document.getElementById("username").value==""){
+		alert("You don't put your user name in the field");
+		return;
+	} else {
+		document.getElementById("ShowFriends").submit();
+	}
+}
+function reportUser() {
+	var radio = $('input[name="report"]:checked').val();
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+        $('#reportedName').html(xhttp.responseText);
+        jQuery.noConflict (); 
+        $('#reportModal').modal('show').trigger('shown');
+      }
+    };
+	xhttp.open("GET", "ReportUser?reportedUser="+ document.getElementById("username").value+"&report="+radio, true);
+	xhttp.send();
 }
 
 /*Anna*/

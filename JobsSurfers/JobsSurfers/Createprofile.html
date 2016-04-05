@@ -87,12 +87,12 @@
   	<table>
   		<tbody>
   			<tr row span=3>
-  				<td align="left"><input class="jordi" type="text" size="20" Placeholder="User Name" name="username" id="username-input" onclick="javascript: clean(this);">
+  				<td align="left"><input class="jordi" type="text" size="20" Placeholder="User Name *" name="username-input" id="username-input" onclick="javascript: clean(this);">
           </td>
         <tr>
-          <td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="First Name *" name="firstname" id="firstname-input" onclick="javascript: clean(this);">
+          <td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="First Name *" name="firstname-input" id="firstname-input" onclick="javascript: clean(this);">
           </td>
-  				<td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="Last Name *" name="lastname" id="lastname-input" onclick="javascript: clean(this);" ></td>
+  				<td align ="left"><INPUT class="jordi" type="text" size="20" Placeholder="Last Name *" name="lastname-input" id="lastname-input" onclick="javascript: clean(this);" ></td>
   			</tr>
   			<tr>
   				<td align ="left"><INPUT class="jordi" type="text" size="20" name="email" Placeholder="Email *" onclick="javascript: clean(this);" ></td>	
@@ -113,13 +113,36 @@
   		</tbody>
   	</table>
   	<center><h6> *Required field </h6></center>
-  	<button type="button" name="create" id="create" onclick="al()" >create</button>
-  	<input type="reset" name="reset" value="reset" id="reset">
+    <div class="container">
+    	<center>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" id="create" data-target="#myModal" >create</button>
+    	<input type="reset" name="reset" value="reset" id="reset"></center>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h2 class="modal-title">Create: </h2>
+            </div>
+            <div class="modal-body">
+              <p>Are you soure to create this profile?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-info btn-lg" name="create" id="create" data-toggle="modal" onclick="al()">Create</button>    
+            </div>
+          </div>      
+        </div>
+      </div>
+    </div>
   </FORM>
   </fieldset>
 </div>
 </center>
-
 </body>
 </center>
 </html>

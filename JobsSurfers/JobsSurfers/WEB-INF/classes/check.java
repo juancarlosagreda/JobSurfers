@@ -25,15 +25,15 @@ public class check extends HttpServlet {
     PrintWriter out = response.getWriter();
     HttpSession session=request.getSession(true);
     //Leer los valores
-    String username=request.getParameter("username");
-  	String firstname=request.getParameter("firstname");
-  	String lastname=request.getParameter("lastname");
+    String username=request.getParameter("username-input");
+  	String firstname=request.getParameter("firstname-input");
+  	String lastname=request.getParameter("lastname-input");
     String email=request.getParameter("email");
     String gender=request.getParameter("gender");
     String mobilenumber=request.getParameter("mobilenumber");
     String birthday=request.getParameter("birthday");
     //Registrar en la base de datos
-    String sql = "INSERT INTO Profile (Username, name1, surname1, email, BirthDate, Gender, PhoneNumber) VALUES (";
+    String sql = "INSERT INTO Profile (Username, name1, surname1, [e-mail], BirthDate, Gender, PhoneNumber) VALUES (";
     sql += "'" + username + "'";
     sql +=  ", '" + firstname + "'";
     sql +=  ", '" + lastname + "'";

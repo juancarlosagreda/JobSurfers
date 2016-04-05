@@ -57,9 +57,21 @@
     </servlet>
     <!--Jordi-->
     <servlet>
-      <servlet-name>check</servlet-name> 
-      <servlet-class>check</servlet-class> 
-    </servlet>
+	  <servlet-name>check</servlet-name> 
+	  <servlet-class>check</servlet-class> 
+	</servlet>
+	<servlet>
+	  <servlet-name>newfriends</servlet-name> 
+	  <servlet-class>newfriends</servlet-class> 
+	</servlet>
+	<servlet>
+	  <servlet-name>ShowFriends</servlet-name> 
+	  <servlet-class>ShowFriends</servlet-class> 
+	</servlet>
+	<servlet>
+	  <servlet-name>ReportUser</servlet-name> 
+	  <servlet-class>ReportUser</servlet-class> 
+	</servlet>
     <!--Maialen-->
     <servlet>
         <servlet-name>MakeComment</servlet-name>
@@ -182,9 +194,21 @@
     </servlet-mapping>
     <!--Jordi-->
     <servlet-mapping>
-        <servlet-name>check</servlet-name> 
-        <url-pattern>/check</url-pattern> 
-    </servlet-mapping>
+	  <servlet-name>check</servlet-name> 
+	  <url-pattern>/check</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping>
+	  <servlet-name>newfriends</servlet-name> 
+	  <url-pattern>/newfriends</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping>
+	  <servlet-name>ShowFriends</servlet-name> 
+	  <url-pattern>/ShowFriends</url-pattern> 
+	</servlet-mapping>
+	<servlet-mapping>
+	  <servlet-name>ReportUser</servlet-name> 
+	  <url-pattern>/ReportUser</url-pattern> 
+	</servlet-mapping>
     <!--Asier-->
     <servlet-mapping>
         <servlet-name>ButtonViewProfile</servlet-name> 

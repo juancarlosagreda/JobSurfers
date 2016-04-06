@@ -32,13 +32,16 @@ button.jordi{
 border: 0;
 background: white;
 }
+button:hover {
+border-color: #5882FA
+}
 select{
 background-color: whitesmoke;
 color: silver;
 border-radius: 10px;
 }
 select:hover{
-border-color: #5882FA
+border-color: #5882FA;
 }
 input.jordi {
 color: black;
@@ -51,24 +54,41 @@ border-radius: 7px;
 input:hover {
 border-color: #5882FA
 }
-#create{
-padding: 10px 10px;
-font-family: Verdana;
-font-size: 14px;
-background-color: #08298A;
-color: white;
-border-radius: 15px;
-font-weight: bold;
+legend.jordi {    
+  width: 70%;
+  padding: 2px;
+  margin-bottom: 2px;
+  border: 10px;
+  border-bottom: 0px;
+}
+fieldset.jordi { 
+  width: 400px; 
+  padding: 25px; 
+  border: 2px solid navy;  
+  margin: 25px;
+  border-radius: 30px;
+} 
+#create {
+  padding: 10px 10px;
+  font-family: Verdana;
+  font-size: 14px;
+  background-color: #08298A;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+}
+#create:hover {
+  border-color: #5882FA
 }
 #reset{
-padding: 10px 10px;
-font-family: Verdana;
-font-size: 14px;
-background-color: #08298A;
-color: white;
-margin: 5px;
-border-radius: 15px;
-font-weight: bold;
+  padding: 10px 10px;
+  font-family: Verdana;
+  font-size: 14px;
+  background-color: #08298A;
+  color: white;
+  margin: 5px;
+  border-radius: 15px;
+  font-weight: bold;
 }
 #continue {
   padding: 10px 10px;
@@ -78,7 +98,9 @@ font-weight: bold;
   color: white;
   border-radius: 15px;
   font-weight: bold;
-  border-color: #5882FA;
+}
+#continue:hover {
+  border-color: #5882FA
 }
 #image{
   padding: 10 10;
@@ -89,9 +111,15 @@ font-weight: bold;
   border-radius: 15px;
   font-weight: bold;
 }
-/*span {
-color: red;
-}*/
+#jordiconnections{
+  top: 20px !important;
+  position: relative;
+  margin: 50px 250px;
+  background-color: white;
+  border-radius: 4px;
+  width: 800px;
+  padding: 10px 150px;
+}
 p.hover {
  background: #ccc;
 }

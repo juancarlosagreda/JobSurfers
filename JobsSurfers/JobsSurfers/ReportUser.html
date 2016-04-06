@@ -1,0 +1,121 @@
+<html>
+<HEAD>
+<TITLE> Report </TITLE>
+<!--AÑADE TODO ESTO EN TU HEAD-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" >
+  <script src="scripts.js"></script>
+
+  <center><H1>Report</H1></center>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</HEAD>
+<BODY>
+<!--AÑADE TODO ESTO EN EL INICIO DE TU BODY-->
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+
+  <div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	  <span class="sr-only">Toggle navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+	<ul class="nav navbar-nav">
+	  <li><a onclick="goBack()" >< BACK</a>
+	  </li>
+	</ul>
+	<a class="navbar-brand" href="#"><img id="logo" src="logo.jpg" alt="Jobs Surfers Logo" title="Jobs Surfers Logo" /></a>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+	<ul class="nav navbar-nav navbar-right">
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Connection's suggestion</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Validate aptitudes</a></li>
+		  <li><a href="#">Ask for recommendations</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Apply for a job</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Post a job</a></li>
+		  <li><a href="#">Manage jobs</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="Postfoto.html">Create profile</a></li>
+		  <li><a href="#">Add Aptitudes</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Groups</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Sing out</a></li>
+		  <li><a href="#">Delete users</a></li>
+		</ul>
+	  </li>
+	</ul>
+  </div><!--/.nav-collapse -->
+</div>
+</nav>
+
+
+	<CENTER>
+	<h4> Please, firstly put your Username in this field. </h4>
+	<INPUT class="jordi" type="text" size="20" Placeholder="User Name" name="reportedUser" id="username" onclick="javascript: clean(this);">
+	<h3>Select your answer: </h3>
+	<table>
+		  <tr>
+		    <td><INPUT class="jordi" type="radio" name="report" Value="like"> Because I don't like it.</td>
+		  </tr>
+		  <tr>
+		    <td><INPUT class="jordi" type="radio" name="report" Value="spam"> Because is spam or scam.</td>
+		  </tr>
+		  <tr>
+		    <td><INPUT class="jordi" type="radio" name="report" Value="risk"> Because puts people at risk.</td>
+		  </tr>
+		  <tr>
+		    <td><INPUT class="jordi" type="radio" name="report" Value="NotShould"> Because it shouldn't be on JobsSurfers.</td>
+		  </tr>	
+	</table>
+	<div class="container">		
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" onclick="reportUser();">Report</button>
+		<div id="reportedModalPlaceholder">
+            <div class="modal fade" id="reportModal" abindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <h3 class="modal-title">Reported!</h3>
+                        </div>
+
+                        <div class="modal-body">
+                            <span class="Congrats-text">You have successfully reported:  <span id="reportedName"></span> successfully!</span>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+
+	</div>
+	</CENTER>
+
+</BODY>
+</html>

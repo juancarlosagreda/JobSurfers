@@ -1,0 +1,81 @@
+<html>
+<HEAD>
+<TITLE> Show Friends </TITLE>
+<!--AÑADE TODO ESTO EN TU HEAD-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" >
+  <script src="scripts.js"></script>
+
+  <center><H1>Show your friends</H1></center>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</HEAD>
+<BODY>
+<!--AÑADE TODO ESTO EN EL INICIO DE TU BODY-->
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+
+  <div class="navbar-header">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	  <span class="sr-only">Toggle navigation</span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	  <span class="icon-bar"></span>
+	</button>
+	<ul class="nav navbar-nav">
+	  <li><a onclick="goBack()" >< BACK</a>
+	  </li>
+	</ul>
+	<a class="navbar-brand" href="#"><img id="logo" src="logo.jpg" alt="Jobs Surfers Logo" title="Jobs Surfers Logo" /></a>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+	<ul class="nav navbar-nav navbar-right">
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Connection's suggestion</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Validate aptitudes</a></li>
+		  <li><a href="#">Ask for recommendations</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="#">Apply for a job</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Post a job</a></li>
+		  <li><a href="#">Manage jobs</a></li>
+		</ul>
+	  </li>
+	  <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jordi's Account <span class="caret"></span></a>
+		<ul class="dropdown-menu">
+		  <li><a href="Postfoto.html">Create profile</a></li>
+		  <li><a href="#">Add Aptitudes</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Groups</a></li>
+		  <li role="separator" class="divider"></li>
+		  <li><a href="#">Sing out</a></li>
+		  <li><a href="#">Delete users</a></li>
+		</ul>
+	  </li>
+	</ul>
+  </div><!--/.nav-collapse -->
+</div>
+</nav>
+
+<FORM action="ShowFriends" method="GET" id="ShowFriends">
+	<CENTER>
+	<div>
+		<button type="submit" id="create" onclick="serch(username)"> Serch</BUTTON>
+	</div>
+	</CENTER>
+</FORM>
+
+</BODY>
+</html>

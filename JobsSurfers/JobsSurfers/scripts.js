@@ -121,6 +121,18 @@ function invalidate(user, apt, val){
 function searchAll(){
   window.location="searcher?nameSearch="+document.getElementById("inp-search").value;
 }
+function inviteFriends(){
+  var group = document.getElementById("groupnameplaceholder").innerHTML;
+  window.location="invite?group="+group;
+ 
+}
+function sendInvitation() {
+  $('#WriteModal').modal('hide');
+  inviteForm.submit();
+}
+function backToGroups(){
+  window.location="FindGroups";
+}
 /*Juan Fran*/
 function createGroup() {
 	$('#CreateGroupModal').modal('hide');

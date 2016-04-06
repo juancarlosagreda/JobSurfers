@@ -2,50 +2,49 @@
 <web-app>
     <!--Anna-->
     <servlet>
+        <servlet-name>sendInvitations</servlet-name>
+        <servlet-class>sendInvitations</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>invite</servlet-name>
+        <servlet-class>invite</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>searcher</servlet-name>
         <servlet-class>searcher</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>validate</servlet-name>
         <servlet-class>validate</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>validateAptitudes</servlet-name>
         <servlet-class>validateAptitudes</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>showMessages</servlet-name>
         <servlet-class>showMessages</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>message</servlet-name>
         <servlet-class>message</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>myApplications</servlet-name>
         <servlet-class>myApplications</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>apply</servlet-name>
         <servlet-class>apply</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>searchJob</servlet-name>
         <servlet-class>searchJob</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>filterJob</servlet-name>
         <servlet-class>filterJob</servlet-class>
     </servlet>
-    <!--Anna-->
     <servlet>
         <servlet-name>showConnections</servlet-name>
         <servlet-class>showConnections</servlet-class>
@@ -114,50 +113,49 @@
 
     <!--Anna-->
     <servlet-mapping>
+        <servlet-name>sendInvitations</servlet-name>
+        <url-pattern>/sendInvitations</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>invite</servlet-name>
+        <url-pattern>/invite</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>searcher</servlet-name>
         <url-pattern>/searcher</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>validate</servlet-name>
         <url-pattern>/validate</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>validateAptitudes</servlet-name>
         <url-pattern>/validateAptitudes</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>showMessages</servlet-name>
         <url-pattern>/showMessages</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>message</servlet-name>
         <url-pattern>/message</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>myApplications</servlet-name>
         <url-pattern>/myApplications</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>apply</servlet-name>
         <url-pattern>/apply</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>searchJob</servlet-name>
         <url-pattern>/searchJob</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>filterJob</servlet-name>
         <url-pattern>/filterJob</url-pattern>
     </servlet-mapping>
-    <!--Anna-->
     <servlet-mapping>
         <servlet-name>showConnections</servlet-name>
         <url-pattern>/showConnections</url-pattern>

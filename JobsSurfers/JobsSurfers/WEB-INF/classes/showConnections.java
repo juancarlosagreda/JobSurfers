@@ -45,7 +45,7 @@ public class showConnections extends HttpServlet {
                 while(myFriends.next()){
                     amigo = myFriends.getString("friend");
                     html += "<tr>";
-                    html += "<td>" + amigo + "<button type='button' class='turusend btn' onclick='openWM(`"+amigo+"`)'>Send message <span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></button></td>";
+                    html += "<td>" + amigo + "<button type='button' class='turusend btn' onclick=''>Ask for recomendation <span class='glyphicon glyphicon-thumbs-up' aria-hidden='true'></span></button><button type='button' class='turusend btn' onclick='openWM(`"+amigo+"`)'>Send message <span class='glyphicon glyphicon-envelope' aria-hidden='true'></span></button></td>";
                     html += "</tr>";
                 }
                 html += "</table>";

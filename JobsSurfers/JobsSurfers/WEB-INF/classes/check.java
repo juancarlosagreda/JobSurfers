@@ -33,7 +33,7 @@ public class check extends HttpServlet {
     String mobilenumber=request.getParameter("mobilenumber");
     String birthday=request.getParameter("birthday");
     //Registrar en la base de datos
-    String sql = "INSERT INTO Profile (Username, name1, surname1, [e-mail], BirthDate, Gender, PhoneNumber) VALUES (";
+    String sql = "INSERT INTO Profile (Username, name1, surname1, email, BirthDate, Gender, PhoneNumber) VALUES (";
     sql += "'" + username + "'";
     sql +=  ", '" + firstname + "'";
     sql +=  ", '" + lastname + "'";

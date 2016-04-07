@@ -23,13 +23,8 @@ function add () {
 		document.getElementById("newfriends").submit();
 	}
 }
-function serch() {
-	if (document.getElementById("username").value==""){
-		alert("You don't put your user name in the field");
-		return;
-	} else {
-		document.getElementById("ShowFriends").submit();
-	}
+function search() {
+		document.getElementById("showConnections").submit();
 }
 function reportUser() {
 	var radio = $('input[name="report"]:checked').val();

@@ -45,10 +45,6 @@
         <servlet-name>filterJob</servlet-name>
         <servlet-class>filterJob</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>showConnections</servlet-name>
-        <servlet-class>showConnections</servlet-class>
-    </servlet>
     <!--Asier-->
     <servlet>
         <servlet-name>ButtonViewProfile</servlet-name>
@@ -64,9 +60,9 @@
 	  <servlet-class>newfriends</servlet-class> 
 	</servlet>
 	<servlet>
-	  <servlet-name>ShowFriends</servlet-name> 
-	  <servlet-class>ShowFriends</servlet-class> 
-	</servlet>
+        <servlet-name>showConnections</servlet-name>
+        <servlet-class>showConnections</servlet-class>
+    </servlet>
 	<servlet>
 	  <servlet-name>ReportUser</servlet-name> 
 	  <servlet-class>ReportUser</servlet-class> 
@@ -156,10 +152,6 @@
         <servlet-name>filterJob</servlet-name>
         <url-pattern>/filterJob</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>showConnections</servlet-name>
-        <url-pattern>/showConnections</url-pattern>
-    </servlet-mapping>
     <!--Maialen-->
     <servlet-mapping>
         <servlet-name>MakeComment</servlet-name>
@@ -200,9 +192,9 @@
 	  <url-pattern>/newfriends</url-pattern> 
 	</servlet-mapping>
 	<servlet-mapping>
-	  <servlet-name>ShowFriends</servlet-name> 
-	  <url-pattern>/ShowFriends</url-pattern> 
-	</servlet-mapping>
+        <servlet-name>showConnections</servlet-name>
+        <url-pattern>/showConnections</url-pattern>
+    </servlet-mapping>
 	<servlet-mapping>
 	  <servlet-name>ReportUser</servlet-name> 
 	  <url-pattern>/ReportUser</url-pattern> 
